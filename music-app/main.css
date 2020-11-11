@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+body {
+    background-color: #EEE;
+}
+
+.app-wrapper { /*centers everything in page */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+}
+
+.player {
+    background-color: #ffffff;
+    padding: 100px 50px;
+    width: 414px;
+    max-width: 100%; /*makes sure player doesnt go the max size of screen width */
+    border-radius: 16px;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.1);
+}
+
+.song-img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+   
+
+    width: 200px;
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.3);
+
+    margin-bottom: 50px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('78a548b487527dbed33d23fbb9b1592a.1000x1000x1.jpg');
+
+    transition: 0.4s;
+}
+
+.song-img:after { 
+    content: '';
+    padding-top: 100%; /* uses width of parent element to get its height */
+    display: block;
+}
+
+.song-img:before { 
+    content: '';
+    display: block;
+    position: absolute; /* absolute positioning relative to the song image*/
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid #EEE;
+    border-radius: 50%;
+}
+
+.song-details {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.song-details h2{
+    font-size: 24px;
+    font-weight: 600;
+    color: #313131;
+    margin-bottom: 5px;
+}
+
+.song-details h3{
+    font-size: 16px;
+    font-weight: 500;
+    color: #888;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.player-controls .play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #f34880;
+    color: #fff;
+    margin: 0px 30px;
+
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: 0px 6px 12px rgba(254, 72 , 128, 0.6);
+    transition: 0.4s;
+}
+
+.player-controls .play-btn:hover {
+    box-shadow: 0px 8px 12px rgba(254, 72 , 128, 0.8);
+}
+
+.player-controls .skip-btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    color: #ccc;
+}
+
+.player-controls .skip-btn:hover {
+    color: #888;
+}
+
+.next-up p {
+    color: #888;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.next-up p span{
+    font-weight: 400;
+    font-style: italic;
+}
+
+@media (max-width: 414px) {
+    .player {
+        min-height: 100vh;
+        border-radius: 0px;
+        padding: 75px 30px;
+    }
+}
